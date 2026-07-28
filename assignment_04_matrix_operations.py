@@ -92,3 +92,4 @@ def multiply_matrices(matrix_a, matrix_b):
 def print_matrix(matrix):
     for row in matrix:
         print(" ".join(f"{x:3}" for x in row))
+    
