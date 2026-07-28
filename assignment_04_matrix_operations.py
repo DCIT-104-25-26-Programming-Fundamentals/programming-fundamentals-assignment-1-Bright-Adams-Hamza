@@ -59,4 +59,36 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+def transpose_matrix(matrix):
+    transposed = []
+    for j in range(len(matrix[0])):
+        row = []
+        for i in range(len(matrix)):
+            row.append(matrix[i][j])
+        transposed.append(row)
+    return transposed
 
+def add_matrices(matrix_a, matrix_b):
+    result = []
+    for i in range(len(matrix_a)):
+        row = []
+        for j in range(len(matrix_a[0])):
+            row.append(matrix_a[i][j] + matrix_b[i][j])
+        result.append(row)
+    return result
+
+def multiply_matrices(matrix_a, matrix_b):
+    result = []
+    for i in range(len(matrix_a)):
+        row = []
+        for j in range(len(matrix_b[0])):
+            total = 0
+            for k in range(len(matrix_b)):
+                total += matrix_a[i][k] * matrix_b[k][j]
+            row.append(total)
+        result.append(row)
+    return result
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(f"{x:3}" for x in row))
